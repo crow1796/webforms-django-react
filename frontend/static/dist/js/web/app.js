@@ -57888,6 +57888,8 @@ exports.push([module.i, "/* \n    Created on : Mar 19, 2014, 9:48:25 AM\n    Aut
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_switch__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_switch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_switch__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57898,461 +57900,479 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
 var Pricing = function (_React$Component) {
     _inherits(Pricing, _React$Component);
 
-    function Pricing() {
+    function Pricing(props) {
         _classCallCheck(this, Pricing);
 
-        return _possibleConstructorReturn(this, (Pricing.__proto__ || Object.getPrototypeOf(Pricing)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Pricing.__proto__ || Object.getPrototypeOf(Pricing)).call(this, props));
+
+        _this.state = {
+            cycle: false
+        };
+        return _this;
     }
 
     _createClass(Pricing, [{
-        key: "render",
+        key: 'togglePlanCycle',
+        value: function togglePlanCycle() {
+            this.setState({
+                cycle: !this.state.cycle
+            });
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { id: "pricing" },
+                'div',
+                { id: 'pricing' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "pricing-wrapper" },
+                    'div',
+                    { className: 'pricing-wrapper' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "container" },
+                        'div',
+                        { className: 'container' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "h1",
-                            { className: "title has-text-centered" },
-                            "Choose the plan that works for you. "
+                            'h1',
+                            { className: 'title has-text-centered' },
+                            'Choose the plan that works for you. '
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "h2",
-                            { className: "subtitle has-text-centered" },
-                            "With ZERO installation, now you can create online forms."
+                            'h2',
+                            { className: 'subtitle has-text-centered' },
+                            'With ZERO installation, now you can create online forms.'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "has-text-centered" },
+                            'div',
+                            { className: 'has-text-centered' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "field" },
+                                'div',
+                                { className: 'field' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "label",
-                                    { className: "switch" },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "is-danger", type: "checkbox" }),
+                                    'label',
+                                    { className: 'switch' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_switch___default.a, {
+                                        onChange: this.togglePlanCycle,
+                                        checked: this.state.cycle,
+                                        id: 'plan-cycle-switch'
+                                    }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "span",
+                                        'span',
                                         null,
-                                        "Yearly"
+                                        'Yearly'
                                     )
                                 )
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "columns packages" },
+                            'div',
+                            { className: 'columns packages' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "column" },
+                                'div',
+                                { className: 'column' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "package wow fadeIn", style: { visibility: 'visible', animationName: 'fadeIn' } },
+                                    'div',
+                                    { className: 'package wow fadeIn', style: { visibility: 'visible', animationName: 'fadeIn' } },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "title is-2 has-text-centered is-uppercase _cursive-font name" },
-                                        "Basic"
+                                        'h2',
+                                        { className: 'title is-2 has-text-centered is-uppercase _cursive-font name' },
+                                        'Basic'
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { className: "subtitle has-text-centered" }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'subtitle has-text-centered' }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "price" },
+                                        'div',
+                                        { className: 'price' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "amount" },
-                                            "Free"
+                                            'span',
+                                            { className: 'amount' },
+                                            'Free'
                                         )
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered get-started" },
+                                        'div',
+                                        { className: 'has-text-centered get-started' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "button",
-                                            { type: "button", "data-wow-delay": "0s", className: "button is-dark wow pulse", style: { visibility: 'visible', animationDelay: '0s', animationName: 'pulse' } },
-                                            "GET STARTED"
+                                            'button',
+                                            { type: 'button', 'data-wow-delay': '0s', className: 'button is-dark wow pulse', style: { visibility: 'visible', animationDelay: '0s', animationName: 'pulse' } },
+                                            'GET STARTED'
                                         )
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered" },
-                                        "Get to know WebForms"
+                                        'div',
+                                        { className: 'has-text-centered' },
+                                        'Get to know WebForms'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "inclusions" },
+                                        'div',
+                                        { className: 'inclusions' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "ul",
+                                            'ul',
                                             null,
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "100 responses per month"
+                                                '100 responses per month'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "10 fields per form"
+                                                '10 fields per form'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Basic Fields"
+                                                'Basic Fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Metrics & Reporting"
+                                                'Metrics & Reporting'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Self-notifications (email)"
+                                                'Self-notifications (email)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Answer piping"
+                                                'Answer piping'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Send data to 500+ apps (Zapier)"
+                                                'Send data to 500+ apps (Zapier)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Data API"
+                                                'Data API'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Embedding"
+                                                'Embedding'
                                             )
                                         )
                                     )
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "column" },
+                                'div',
+                                { className: 'column' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "package wow fadeIn", style: { visibility: 'visible', animationName: 'fadeIn' } },
+                                    'div',
+                                    { className: 'package wow fadeIn', style: { visibility: 'visible', animationName: 'fadeIn' } },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "title is-2 has-text-centered is-uppercase _cursive-font name" },
-                                        "Pro"
+                                        'h2',
+                                        { className: 'title is-2 has-text-centered is-uppercase _cursive-font name' },
+                                        'Pro'
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { className: "subtitle has-text-centered" }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'subtitle has-text-centered' }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "price" },
+                                        'div',
+                                        { className: 'price' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "currency" },
-                                            "$"
+                                            'span',
+                                            { className: 'currency' },
+                                            '$'
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "amount" },
-                                            "30"
+                                            'span',
+                                            { className: 'amount' },
+                                            '30'
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "per" },
-                                            "per month/user"
+                                            'span',
+                                            { className: 'per' },
+                                            'per month/user'
                                         )
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered get-started" },
+                                        'div',
+                                        { className: 'has-text-centered get-started' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "button",
-                                            { type: "button", "data-wow-delay": "0.2s", className: "button is-dark wow pulse", style: { visibility: 'visible', 'animationDelay': '0.2s', animationName: 'pulse' } },
-                                            "GET STARTED"
+                                            'button',
+                                            { type: 'button', 'data-wow-delay': '0.2s', className: 'button is-dark wow pulse', style: { visibility: 'visible', 'animationDelay': '0.2s', animationName: 'pulse' } },
+                                            'GET STARTED'
                                         )
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered" },
-                                        "More power & personalization"
+                                        'div',
+                                        { className: 'has-text-centered' },
+                                        'More power & personalization'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "inclusions" },
+                                        'div',
+                                        { className: 'inclusions' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "ul",
+                                            'ul',
                                             null,
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Unlimited responses"
+                                                'Unlimited responses'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Unlimited form fields"
+                                                'Unlimited form fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Advanced Fields"
+                                                'Advanced Fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Metrics & Reporting"
+                                                'Metrics & Reporting'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Self-notifications (email)"
+                                                'Self-notifications (email)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Answer piping"
+                                                'Answer piping'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Send data to 500+ apps (Zapier)"
+                                                'Send data to 500+ apps (Zapier)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Data API"
+                                                'Data API'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Embedding"
+                                                'Embedding'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Conditional logic (logic jump)"
+                                                'Conditional logic (logic jump)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Respondent notifications (email)"
+                                                'Respondent notifications (email)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Calculator (scoring & pricing)"
+                                                'Calculator (scoring & pricing)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Custom Thank you screen"
+                                                'Custom Thank you screen'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Hidden fields"
+                                                'Hidden fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Payment field"
+                                                'Payment field'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "MailChimp integration"
+                                                'MailChimp integration'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "File upload field (2Gb storage)"
+                                                'File upload field (2Gb storage)'
                                             )
                                         )
                                     )
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "column" },
+                                'div',
+                                { className: 'column' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "package wow fadeIn brilliant", style: { visibility: 'visible', animationName: 'fadeIn' } },
+                                    'div',
+                                    { className: 'package wow fadeIn brilliant', style: { visibility: 'visible', animationName: 'fadeIn' } },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "title is-2 has-text-centered is-uppercase _cursive-font name" },
-                                        "Pro+"
+                                        'h2',
+                                        { className: 'title is-2 has-text-centered is-uppercase _cursive-font name' },
+                                        'Pro+'
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { className: "subtitle has-text-centered" }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'subtitle has-text-centered' }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "price" },
+                                        'div',
+                                        { className: 'price' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "currency" },
-                                            "$"
+                                            'span',
+                                            { className: 'currency' },
+                                            '$'
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "amount" },
-                                            "59"
+                                            'span',
+                                            { className: 'amount' },
+                                            '59'
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "span",
-                                            { className: "per" },
-                                            "per month/user"
+                                            'span',
+                                            { className: 'per' },
+                                            'per month/user'
                                         )
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", null),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered get-started" },
+                                        'div',
+                                        { className: 'has-text-centered get-started' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "button",
-                                            { type: "button", "data-wow-delay": "0.4s", className: "button is-dark wow tada", style: { visibility: 'visible', animationDelay: '0.4s', animationName: 'tada' } },
-                                            "GET STARTED"
+                                            'button',
+                                            { type: 'button', 'data-wow-delay': '0.4s', className: 'button is-dark wow tada', style: { visibility: 'visible', animationDelay: '0.4s', animationName: 'tada' } },
+                                            'GET STARTED'
                                         )
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "has-text-centered" },
-                                        "Advanced features for brands"
+                                        'div',
+                                        { className: 'has-text-centered' },
+                                        'Advanced features for brands'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "inclusions" },
+                                        'div',
+                                        { className: 'inclusions' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "ul",
+                                            'ul',
                                             null,
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Unlimited responses"
+                                                'Unlimited responses'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Unlimited form fields"
+                                                'Unlimited form fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Advanced Fields"
+                                                'Advanced Fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Metrics & Reporting"
+                                                'Metrics & Reporting'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Self-notifications (email)"
+                                                'Self-notifications (email)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Answer piping"
+                                                'Answer piping'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Send data to 500+ apps (Zapier)"
+                                                'Send data to 500+ apps (Zapier)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Data API"
+                                                'Data API'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Embedding"
+                                                'Embedding'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Conditional logic (logic jump)"
+                                                'Conditional logic (logic jump)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Respondent notifications (email)"
+                                                'Respondent notifications (email)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Calculator (scoring & pricing)"
+                                                'Calculator (scoring & pricing)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Custom Thank you screen"
+                                                'Custom Thank you screen'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Hidden fields"
+                                                'Hidden fields'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Payment field"
+                                                'Payment field'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "MailChimp integration"
+                                                'MailChimp integration'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "File upload field (4Gb/user)"
+                                                'File upload field (4Gb/user)'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Invite other users to workspaces"
+                                                'Invite other users to workspaces'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Priority support"
+                                                'Priority support'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Remove WebForms branding"
+                                                'Remove WebForms branding'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Redirect upon submit"
+                                                'Redirect upon submit'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Webhooks"
+                                                'Webhooks'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Close embedded webform after submit"
+                                                'Close embedded webform after submit'
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "li",
+                                                'li',
                                                 null,
-                                                "Customer Outcomes Manager (for yearly accounts with 10+ users)"
+                                                'Customer Outcomes Manager (for yearly accounts with 10+ users)'
                                             )
                                         )
                                     )
@@ -58369,6 +58389,538 @@ var Pricing = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Pricing);
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _icons = __webpack_require__(172);
+
+var _getBackgroundColor = __webpack_require__(173);
+
+var _getBackgroundColor2 = _interopRequireDefault(_getBackgroundColor);
+
+var _hexColorPropType = __webpack_require__(174);
+
+var _hexColorPropType2 = _interopRequireDefault(_hexColorPropType);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReactSwitch = function (_Component) {
+  _inherits(ReactSwitch, _Component);
+
+  function ReactSwitch(props) {
+    _classCallCheck(this, ReactSwitch);
+
+    var _this = _possibleConstructorReturn(this, (ReactSwitch.__proto__ || Object.getPrototypeOf(ReactSwitch)).call(this, props));
+
+    _initialiseProps.call(_this);
+
+    var height = props.height,
+        width = props.width,
+        handleDiameter = props.handleDiameter,
+        checked = props.checked;
+
+    _this.handleDiameter = handleDiameter || height - 2;
+    _this.checkedPos = Math.max(width - height, width - (height + _this.handleDiameter) / 2);
+    _this.uncheckedPos = Math.max(0, (height - _this.handleDiameter) / 2);
+    _this.state = {
+      pos: checked ? _this.checkedPos : _this.uncheckedPos,
+      startX: null,
+      isDragging: false,
+      hasOutline: false
+    };
+    return _this;
+  }
+
+  _createClass(ReactSwitch, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(_ref) {
+      var checked = _ref.checked;
+
+      var pos = checked ? this.checkedPos : this.uncheckedPos;
+      this.setState({ pos: pos });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          checked = _props.checked,
+          disabled = _props.disabled,
+          className = _props.className,
+          offColor = _props.offColor,
+          onColor = _props.onColor,
+          offHandleColor = _props.offHandleColor,
+          onHandleColor = _props.onHandleColor,
+          checkedIcon = _props.checkedIcon,
+          uncheckedIcon = _props.uncheckedIcon,
+          boxShadow = _props.boxShadow,
+          activeBoxShadow = _props.activeBoxShadow,
+          height = _props.height,
+          width = _props.width,
+          id = _props.id,
+          ariaLabelledby = _props["aria-labelledby"],
+          ariaLabel = _props["aria-label"];
+      var _state = this.state,
+          pos = _state.pos,
+          isDragging = _state.isDragging,
+          hasOutline = _state.hasOutline;
+
+
+      var rootStyle = {
+        position: "relative",
+        display: "inline-block",
+        opacity: disabled ? 0.5 : 1,
+        borderRadius: height / 2,
+        WebkitTransition: "opacity 0.25s",
+        MozTransition: "opacity 0.25s",
+        transition: "opacity 0.25s",
+        touchAction: "none",
+        WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
+        WebkitUserSelect: "none",
+        MozUserSelect: "none",
+        msUserSelect: "none",
+        userSelect: "none"
+      };
+
+      var backgroundStyle = {
+        height: height,
+        width: width,
+        margin: Math.max(0, (this.handleDiameter - height) / 2),
+        position: "relative",
+        background: (0, _getBackgroundColor2.default)(pos, this.checkedPos, this.uncheckedPos, offColor, onColor),
+        borderRadius: height / 2,
+        cursor: disabled ? "default" : "pointer",
+        WebkitTransition: isDragging ? null : "background 0.25s",
+        MozTransition: isDragging ? null : "background 0.25s",
+        transition: isDragging ? null : "background 0.25s"
+      };
+
+      var checkedIconStyle = {
+        height: height,
+        width: Math.min(height * 1.5, width - (this.handleDiameter + height) / 2 + 1),
+        position: "relative",
+        opacity: (pos - this.uncheckedPos) / (this.checkedPos - this.uncheckedPos),
+        pointerEvents: "none",
+        WebkitTransition: isDragging ? null : "opacity 0.25s",
+        MozTransition: isDragging ? null : "opacity 0.25s",
+        transition: isDragging ? null : "opacity 0.25s"
+      };
+
+      var uncheckedIconStyle = {
+        height: height,
+        width: Math.min(height * 1.5, width - (this.handleDiameter + height) / 2 + 1),
+        position: "absolute",
+        opacity: 1 - (pos - this.uncheckedPos) / (this.checkedPos - this.uncheckedPos),
+        right: 0,
+        top: 0,
+        pointerEvents: "none",
+        WebkitTransition: isDragging ? null : "opacity 0.25s",
+        MozTransition: isDragging ? null : "opacity 0.25s",
+        transition: isDragging ? null : "opacity 0.25s"
+      };
+
+      var handleStyle = {
+        height: this.handleDiameter,
+        width: this.handleDiameter,
+        background: (0, _getBackgroundColor2.default)(pos, this.checkedPos, this.uncheckedPos, offHandleColor, onHandleColor),
+        cursor: disabled ? "default" : "pointer",
+        display: "inline-block",
+        borderRadius: "50%",
+        position: "absolute",
+        transform: "translateX(" + pos + "px)",
+        top: Math.max(0, (height - this.handleDiameter) / 2),
+        outline: 0,
+        boxShadow: hasOutline ? activeBoxShadow : boxShadow,
+        border: 0,
+        WebkitTransition: isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        MozTransition: isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        transition: isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s"
+      };
+
+      return _react2.default.createElement(
+        "div",
+        { className: className, style: rootStyle },
+        _react2.default.createElement(
+          "div",
+          {
+            className: "react-switch-bg",
+            style: backgroundStyle,
+            onClick: disabled ? null : this.handleClick
+          },
+          checkedIcon && _react2.default.createElement(
+            "div",
+            { style: checkedIconStyle },
+            checkedIcon
+          ),
+          uncheckedIcon && _react2.default.createElement(
+            "div",
+            { style: uncheckedIconStyle },
+            uncheckedIcon
+          )
+        ),
+        _react2.default.createElement("div", {
+          className: "react-switch-handle",
+          role: "checkbox",
+          tabIndex: disabled ? null : 0,
+          onMouseDown: disabled ? null : this.handleMouseDown,
+          onTouchStart: disabled ? null : this.handleTouchStart,
+          onTouchMove: disabled ? null : this.handleTouchMove,
+          onTouchEnd: disabled ? null : this.handleTouchEnd,
+          onTouchCancel: disabled ? null : this.handleTouchCancel,
+          onKeyDown: this.handleKeyDown,
+          onFocus: function onFocus() {
+            return _this2.setState({ hasOutline: true });
+          },
+          onBlur: function onBlur() {
+            return _this2.setState({ hasOutline: false });
+          },
+          style: handleStyle,
+          id: id,
+          "aria-checked": checked,
+          "aria-disabled": disabled,
+          "aria-labelledby": ariaLabelledby,
+          "aria-label": ariaLabel
+        })
+      );
+    }
+  }]);
+
+  return ReactSwitch;
+}(_react.Component);
+
+ReactSwitch.propTypes = {
+  checked: _propTypes2.default.bool.isRequired,
+  onChange: _propTypes2.default.func.isRequired,
+  disabled: _propTypes2.default.bool,
+  offColor: _hexColorPropType2.default,
+  onColor: _hexColorPropType2.default,
+  offHandleColor: _hexColorPropType2.default,
+  onHandleColor: _hexColorPropType2.default,
+  handleDiameter: _propTypes2.default.number,
+  uncheckedIcon: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.element]),
+  checkedIcon: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.element]),
+  boxShadow: _propTypes2.default.string,
+  activeBoxShadow: _propTypes2.default.string,
+  height: _propTypes2.default.number,
+  width: _propTypes2.default.number,
+  className: _propTypes2.default.string,
+  id: _propTypes2.default.string,
+  "aria-labelledby": _propTypes2.default.string,
+  "aria-label": _propTypes2.default.string
+};
+ReactSwitch.defaultProps = {
+  disabled: false,
+  offColor: "#888",
+  onColor: "#080",
+  offHandleColor: "#fff",
+  onHandleColor: "#fff",
+  handleDiameter: null,
+  uncheckedIcon: _icons.uncheckedIcon,
+  checkedIcon: _icons.checkedIcon,
+  boxShadow: null,
+  activeBoxShadow: "0px 0px 2px 3px #33bbff",
+  height: 28,
+  width: 56,
+  className: null,
+  id: null,
+  "aria-labelledby": null,
+  "aria-label": null
+};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this3 = this;
+
+  this.handleDragStart = function (clientX) {
+    _this3.setState({ startX: clientX, hasOutline: true });
+  };
+
+  this.handleDrag = function (clientX) {
+    var startX = _this3.state.startX;
+    var checked = _this3.props.checked;
+
+    var startPos = checked ? _this3.checkedPos : _this3.uncheckedPos;
+    var newPos = startPos + clientX - startX;
+    var pos = Math.min(_this3.checkedPos, Math.max(_this3.uncheckedPos, newPos));
+    _this3.setState({ pos: pos, isDragging: true });
+  };
+
+  this.handleDragStop = function (event) {
+    var _state2 = _this3.state,
+        pos = _state2.pos,
+        isDragging = _state2.isDragging;
+    var _props2 = _this3.props,
+        checked = _props2.checked,
+        onChange = _props2.onChange,
+        id = _props2.id;
+
+    // Simulate clicking the handle
+
+    if (!isDragging) {
+      _this3.setState({ startX: null, hasOutline: false });
+      onChange(!checked, event, id);
+      return;
+    }
+    if (checked) {
+      if (pos > (_this3.checkedPos + _this3.uncheckedPos) / 2) {
+        _this3.setState({
+          pos: _this3.checkedPos,
+          startX: null,
+          isDragging: false,
+          hasOutline: false
+        });
+        return;
+      }
+      _this3.setState({ startX: null, isDragging: false, hasOutline: false });
+      onChange(false, event, id);
+      return;
+    }
+    if (pos < (_this3.checkedPos + _this3.uncheckedPos) / 2) {
+      _this3.setState({
+        pos: _this3.uncheckedPos,
+        startX: null,
+        isDragging: false,
+        hasOutline: false
+      });
+      return;
+    }
+    _this3.setState({ startX: null, isDragging: false, hasOutline: false });
+    onChange(true, event, id);
+  };
+
+  this.handleMouseDown = function (event) {
+    // Ignore right click and scroll
+    if (typeof event.button === "number" && event.button !== 0) {
+      return;
+    }
+
+    _this3.handleDragStart(event.clientX);
+    document.addEventListener("mousemove", _this3.handleMouseMove);
+    document.addEventListener("mouseup", _this3.handleMouseUp);
+  };
+
+  this.handleMouseMove = function (event) {
+    event.preventDefault();
+    _this3.handleDrag(event.clientX);
+  };
+
+  this.handleMouseUp = function (event) {
+    _this3.handleDragStop(event);
+    document.removeEventListener("mousemove", _this3.handleMouseMove);
+    document.removeEventListener("mouseup", _this3.handleMouseUp);
+  };
+
+  this.handleTouchStart = function (event) {
+    _this3.handleDragStart(event.touches[0].clientX);
+  };
+
+  this.handleTouchMove = function (event) {
+    _this3.handleDrag(event.touches[0].clientX);
+  };
+
+  this.handleTouchEnd = function (event) {
+    event.preventDefault();
+    _this3.handleDragStop(event);
+  };
+
+  this.handleTouchCancel = function () {
+    _this3.setState({ startX: null, hasOutline: false });
+  };
+
+  this.handleClick = function (event) {
+    var _props3 = _this3.props,
+        checked = _props3.checked,
+        onChange = _props3.onChange,
+        id = _props3.id;
+
+    onChange(!checked, event, id);
+  };
+
+  this.handleKeyDown = function (event) {
+    var _props4 = _this3.props,
+        checked = _props4.checked,
+        onChange = _props4.onChange,
+        id = _props4.id;
+    var isDragging = _this3.state.isDragging;
+    // Trigger change on spacebar and enter keys (in violation of wai-aria spec).
+
+    if ((event.keyCode === 32 || event.keyCode === 13) && !isDragging) {
+      event.preventDefault();
+      onChange(!checked, event, id);
+    }
+  };
+};
+
+exports.default = ReactSwitch;
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.checkedIcon = exports.uncheckedIcon = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var uncheckedIcon = exports.uncheckedIcon = _react2.default.createElement(
+  "svg",
+  {
+    viewBox: "-2 -5 14 20",
+    height: "100%",
+    width: "100%",
+    style: { position: "absolute", top: 0 }
+  },
+  _react2.default.createElement("path", {
+    /* eslint-disable max-len */
+    d: "M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+    /* eslint-eable max-len */
+    , fill: "#fff",
+    fillRule: "evenodd"
+  })
+); /*
+   The MIT License (MIT)
+   
+   Copyright (c) 2015 instructure-react
+   
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+   
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+   
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+   */
+
+var checkedIcon = exports.checkedIcon = _react2.default.createElement(
+  "svg",
+  {
+    height: "100%",
+    width: "100%",
+    viewBox: "-2 -5 17 21",
+    style: { position: "absolute", top: 0 }
+  },
+  _react2.default.createElement("path", {
+    d: "M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0",
+    fill: "#fff",
+    fillRule: "evenodd"
+  })
+);
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getBackgroundColor;
+function createBackgroundColor(pos, checkedPos, uncheckedPos, offColor, onColor) {
+  var relativePos = (pos - uncheckedPos) / (checkedPos - uncheckedPos);
+  if (relativePos === 0) {
+    return offColor;
+  }
+  if (relativePos === 1) {
+    return onColor;
+  }
+
+  var newColor = "#";
+  for (var i = 1; i < 6; i += 2) {
+    var offComponent = parseInt(offColor.substr(i, 2), 16);
+    var onComponent = parseInt(onColor.substr(i, 2), 16);
+    var weightedValue = Math.round((1 - relativePos) * offComponent + relativePos * onComponent);
+    var newComponent = weightedValue.toString(16);
+    if (newComponent.length === 1) {
+      newComponent = "0" + newComponent;
+    }
+    newColor += newComponent;
+  }
+  return newColor;
+}
+
+function convertShorthandColor(color) {
+  if (color.length === 7) {
+    return color;
+  }
+  var sixDigitColor = "#";
+  for (var i = 1; i < 4; i += 1) {
+    sixDigitColor += color[i] + color[i];
+  }
+  return sixDigitColor;
+}
+
+function getBackgroundColor(pos, checkedPos, uncheckedPos, offColor, onColor) {
+  var sixDigitOffColor = convertShorthandColor(offColor);
+  var sixDigitOnColor = convertShorthandColor(onColor);
+  return createBackgroundColor(pos, checkedPos, uncheckedPos, sixDigitOffColor, sixDigitOnColor);
+}
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Make sure color props are strings that start with "#" since other ways to write colors are not supported.
+var hexColorPropType = function hexColorPropType(props, propName, componentName) {
+  var prop = props[propName];
+  if (typeof prop !== "string" || prop[0] !== "#" || prop.length !== 4 && prop.length !== 7) {
+    return new Error("Invalid prop '" + propName + "' supplied to '" + componentName + "'. '" + propName + "' has to be either a 3-digit or 6-digit hex-color string. Valid examples: '#abc', '#123456'");
+  }
+  return null;
+};
+
+exports.default = hexColorPropType;
 
 /***/ })
 /******/ ]);

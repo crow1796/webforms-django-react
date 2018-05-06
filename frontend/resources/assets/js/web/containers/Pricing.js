@@ -1,6 +1,21 @@
 import React from 'react'
 
+import ReactSwitch from 'react-switch'
+
 export default class Pricing extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            cycle: false
+        }
+    }
+
+    togglePlanCycle(){
+        this.setState({
+            cycle: !this.state.cycle
+        })
+    }
+
     render(){
         return (
             <div id="pricing">
@@ -11,7 +26,11 @@ export default class Pricing extends React.Component {
                         <div className="has-text-centered">
                             <div className="field">
                                 <label className="switch">
-                                    <input className="is-danger" type="checkbox"/>
+                                    <ReactSwitch
+                                        onChange={ this.togglePlanCycle }
+                                        checked={this.state.cycle}
+                                        id="plan-cycle-switch"
+                                    />
                                     <span>
                                         Yearly
                                     </span>
