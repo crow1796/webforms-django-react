@@ -1,0 +1,613 @@
+
+// Fonts
+@import url('//fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+// Variables
+@import './../lobibox/lobibox';
+@import "variables";
+
+// Bootstrap
+@import "~animate.css";
+@import "~bulma";
+@import "~bulma-switch";
+
+body{
+    font-family: $font-family-sans-serif;
+}
+
+._cursive-font{
+	font-family: 'Pacifico' !important;
+}
+
+#nprogress .bar {
+	background: $primary !important;
+	height: 4px !important;
+}
+
+#nprogress .spinner-icon{
+	border-top-color: $primary !important;
+	border-left-color: $primary !important;
+}
+
+#main-navbar{
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .1);
+
+    &.is-abs{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .navbar-burger{
+        border: 0;
+        border-radius: 0;
+        outline: 0 !important;
+        height: 64px;
+    }
+
+    .navbar-item > .-flagged{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+        min-height: 199px;
+        z-index: -1;
+        top: -90px;
+        object-fit: cover;
+    }
+
+    .navbar-item,
+    .navbar-item:focus{
+        background: transparent;
+        position: relative;
+        font-weight: 300;
+    }
+
+    .navbar-item:hover,
+    .navbar-item:active{
+        color: $brand-warning;
+    }
+
+    .navbar-brand > .navbar-item{
+        background: transparent !important;
+        font-size: 2em;
+    }
+
+}
+
+.homepage-banner{
+    min-height: 100vh;
+    position: relative;
+    background-image: url('/static/images/homepage-banner.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 6rem;
+
+    .registration-form > .title{
+        font-size: 6rem;
+        text-shadow: 0px 5px 4px black;
+    }
+
+    .registration-form > .subtitle{
+        font-size: 2.15rem;
+    }
+}
+
+.auth-banner{
+    padding-top: 70px;
+    background-position: -300px 0;
+    min-height: 100vh;
+    position: relative;
+    background-image: url('/images/rotating-banner.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 6rem;
+}
+
+#home-section-2{
+    img{
+        width: 40%;
+    }
+
+    h2.is-size-1{
+        font-size: 6rem !important;
+    }
+}
+
+.footer{
+    padding-bottom: 3rem;
+}
+
+@keyframes anim-subnav{
+    0% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(3px);
+        opacity: .4;
+    }
+
+    100% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+}
+
+#subnav{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 0;
+    transform: translateY(6px);
+    animation-name: anim-subnav;
+    animation-duration: 1.5s;
+    animation-delay: .3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.form-card{
+    margin: 90px auto 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+.view{
+    padding-top: 60px;
+}
+
+.pricing-wrapper {
+    font-weight: 400;
+    padding: 50px;
+    color: #9f9f9f;
+    font-size: 15px;
+
+    .package {
+        position: relative;
+        background-color: white;
+        padding: 20px 10px;
+    }
+
+    .package .name{
+        color: #777777;
+    }
+
+    .package .price{
+        text-align: center;
+        padding: 15px 0;
+        height: 78px;
+    }
+
+    .package .price .currency{
+        vertical-align: top;
+    }
+
+    .package .price .amount{
+        font-size: 2.5em;
+        vertical-align: top;
+        line-height: 0.8em;
+    }
+
+    .package .price .per{
+        vertical-align: top;
+        display: block;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+
+    .package .get-started{
+        padding-bottom: 10px;
+    }
+
+    .package .get-started .button{
+        width: 70%;
+        padding: 10px;
+        height: auto;
+        letter-spacing: 0.12em;
+        font-weight: bold;
+    }
+
+    .name {
+        color: #565656;
+        font-weight: 300;
+        font-size: 3rem;
+        margin-top: -5px;
+    }
+    .price {
+        margin-top: 7px;
+        font-weight: bold;
+    }
+    .price.-with-after-text::after {
+        content: " / month per user";
+        font-weight: normal;
+    }
+    hr {
+        background-color: #dedede;
+        border: none;
+        height: 1px;
+    }
+    .trial {
+        font-size: .9rem;
+        font-weight: 600;
+        padding: 2px 21px 2px 21px;
+        border: 1px solid #e4e4e4;
+        display: inline-block;
+        border-radius: 15px;
+        background-color: white;
+        position: relative;
+        bottom: -38px;
+    }
+    ul {
+        list-style: none;
+        padding: 0 15px;
+        text-align: left;
+        margin-top: 29px;
+    }
+    li {
+        margin-bottom: 15px;
+    }
+    %checkIcon {
+        font-family: "FontAwesome";
+        content: "\f00c";
+    }
+    li::before {
+        @extend %checkIcon;
+        font-size: .9rem;
+        margin-right: 3px;
+    }
+    .brilliant {
+        border: 1px solid $primary;
+    }
+
+    .package.brilliant .get-started .button,
+    .package.brilliant .get-started .button:focus{
+        background-color: $primary;
+        color: white;
+    }
+
+    .package.brilliant .get-started .button:hover,
+    .package.brilliant .get-started .button:active{
+        background-color: darken($primary, 8%);
+    }
+
+    /* Triangle */
+    .brilliant::before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 64px 64px 0 0;
+        border-color: $primary transparent transparent transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+    }
+    .brilliant::after {
+        @extend %checkIcon;
+        color: white;
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        text-shadow: 0 0 2px $primary;
+        font-size: 1.4rem;
+    }
+}
+
+.auth-container{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+	right: 0;
+	margin: 0;
+	top: 0;
+	height: 100%;
+	width: 500px;
+}
+
+.auth-form{
+    background: #fff;
+    overflow: hidden;
+    box-shadow: none;
+    color: #8b8c8d;
+    padding: 0 20px 40px;
+    height: 100%;
+}
+
+.auth-form .partition .partition-title{
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.auth-form .partition .partition-form{
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.auth-form .button-set{
+    width: 100%;
+}
+
+.auth-form button{
+    background: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-family: Open Sans,sans-serif;
+    font-weight: 400;
+    min-width: 140px;
+    margin-top: 8px;
+    color: #8b8c8d;
+    cursor: pointer;
+    border: 1px solid #dddedf;
+    text-transform: uppercase;
+    transition: all .1s;
+    font-size: 10px;
+    outline: none;
+}
+
+.or-text{
+    font-size: 11px;
+    padding: 10px 0;
+}
+
+.auth-form button.google-btn{
+    border-color: #D44837;
+    color: #D44837;
+}
+
+.auth-form button.facebook-btn{
+    border-color: #3880ff;
+    color: #3880ff;
+}
+
+.large-btn{
+    width: 100%;
+    background: #fff;
+}
+
+.large-btn span{
+    font-weight: 600;
+}
+
+#register-btn, #signin-btn{
+    margin-left: 0;
+    background: $primary-btn;
+    color: white;
+    border-color: lighten($primary-btn, 5%);
+}
+
+#register-btn:hover,
+#register-btn:active{
+    background: darken($primary-btn, 5%);
+    border-color: darken($primary-btn, 5%);
+}
+
+button:hover{
+    border-color: #c7c8c9;
+    color: #6f7071;
+}
+
+.page-wrapper{
+    padding: 50px;
+}
+
+.payment-info{
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 5px 0 5px 0;
+    margin-bottom: 20px;
+
+    .interval{
+        display: inline-block;
+        font-size: 2em;
+        vertical-align: middle;
+        width: 49%;
+        font-weight: 300;
+    }
+
+    .price{
+        display: inline-block;
+        text-align: right;
+        width: 50%;
+        vertical-align: middle;
+    }
+
+    .price > .currency{
+        vertical-align: top;
+        font-size: .9em;
+    }
+
+    .price > .amount{
+        display: inline-block;
+        font-size: 2.5em;
+        font-weight: 300;
+        vertical-align: middle;
+        line-height: 36px;
+    }
+
+    .price > .per{
+        font-size: 0.7em;
+        vertical-align: bottom;
+        display: inline-block;
+        width: 34px;
+        text-align: left;
+    }
+
+    .price > .per > span{
+        display: block;
+    }
+}
+
+.webforms-form{
+    .input, .textarea{
+        border-radius: 3px;
+        box-shadow: none;
+        padding: 10px 15px;
+        padding-right: 15px;
+        height: auto;
+    }
+
+    .select{
+        height: auto;
+    }
+
+    .select > select{
+        padding: 10px 15px;
+        height: 46px;
+    }
+
+    .control.has-icons-left .icon,
+    .control.has-icons-right .icon{
+        height: 100%;
+    }
+
+    .label{
+        color: #5d5d5d;
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.7em;
+    }
+
+    .submit{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: .9em;
+        padding: 10px 30px;
+        height: auto;
+        font-weight: bold;
+    }
+}
+
+.title,
+.subtitle{
+    font-weight: 300;
+}
+
+label.switch input[type="checkbox"]:checked + span::after {
+    background-color: #F9D73A !important;
+}
+
+label.switch input[type="checkbox"]:checked + span::before {
+    background-color: #E1CB65 !important;
+}
+
+.button.is-warning,
+.button.is-warning:hover,
+.button.is-warning:active{
+    color: white;
+}
+
+.button{
+    font-family: $font-family-sans-serif;
+}
+
+#thank-you{
+    .button.is-primary{
+        padding: 10px 30px;
+        height: auto;
+        letter-spacing: 0.12em;
+        font-weight: bold;
+    }
+
+    .message{
+        padding: 0 40px 70px 40px;
+        width: 75%;
+        margin: 0 auto;
+        box-shadow: -9px 9px 25px rgba(0, 0, 0, 0.2);
+        background: white;
+        min-height: 400px;
+    }
+
+    .message img{
+        width: 40%;
+    }
+}
+
+.-centered{
+    margin: 0 auto !important;
+}
+
+.is-transparent{
+    background-color: transparent;
+}
+
+.particles-js-canvas-el{
+    height: 490px !important;
+}
+
+@media only screen and (max-width: 500px){
+    .auth-form{
+        padding-top: 50px;
+        width: 100%;
+    }
+}
+
+._is-blurred{
+    filter: blur(3px) !important;
+}
+
+.content-loading-overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+
+  & .path {
+    stroke: hsl(210, 70, 75);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

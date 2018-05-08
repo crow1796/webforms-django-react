@@ -20,8 +20,10 @@ mix.webpackConfig({
 	}
 });
 
-mix.react('resources/assets/js/web/app.js', 'static/dist/js/web/');
-mix.react('resources/assets/js/app/app.js', 'static/dist/js/app/');
+mix.react('resources/assets/js/web/app.js', 'static/dist/js/web/')
+	.sass('resources/assets/sass/web/app.scss', 'static/dist/css/web');
+mix.react('resources/assets/js/app/app.js', 'static/dist/js/app/')
+	.sass('resources/assets/sass/app/app.scss', 'static/dist/css/app');
 
 // Full API
 // mix.js(src, output);
