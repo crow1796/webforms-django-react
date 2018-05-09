@@ -1,0 +1,1 @@
+export const HAS_NAVBAR = 'HAS_NAVBAR'

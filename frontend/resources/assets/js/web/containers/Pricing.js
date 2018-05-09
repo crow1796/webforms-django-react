@@ -1,13 +1,16 @@
 import React from 'react'
 
 import ReactSwitch from 'react-switch'
+import { connect } from 'react-redux'
+import * as AppTypes from '@web/actions/app'
 
-export default class Pricing extends React.Component {
+class Pricing extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             cycle: false
         }
+        this.props.hasNavbar(false)
     }
 
     togglePlanCycle(){
@@ -285,3 +288,11 @@ export default class Pricing extends React.Component {
         )
     }
 }
+console.log(AppTypes)
+function mapDispatchToProps(dispatch){
+    return {
+        hasNavbar: (e) => dispatch(AppTypes.HAS_NAVBAR)
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Pricing)

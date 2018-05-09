@@ -5,8 +5,10 @@ import Home from '@web/containers/Home'
 import Pricing from '@web/containers/Pricing'
 import NoMatch from '@web/components/NoMatch'
 import WOW from 'wow.js'
+import classNames from 'classnames'
+import { connect } from 'react-redux'
 
-export default class App extends React.Component {
+class App extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
@@ -46,51 +48,64 @@ export default class App extends React.Component {
 		wow.init()
 	}
 
+	__renderHeaderButton(){
+		if (!this.props.isLoggedIn || this.props.user.is_guest){
+			return (
+				<span>
+					GET STARTED!
+				</span>
+			)
+		}
+		return (
+			<span>
+				DASHBOARD
+			</span>
+		)
+	}
+
 	render(){
 		return (
 			<Router>
 				<div id="app">
-					<nav role="navigation" aria-label="main navigation" id="main-navbar" className="navbar is-fixed-top">
-					    <div className="container">
-					        <div className="navbar-brand">
-					        	<Link to="/" className="navbar-item _cursive-font router-link-exact-active router-link-active">
-							         Web
-							         <span className="has-text-warning">
-							         	Forms
-							         </span>
-						         </Link>
-				            	<button type="button" data-target="navMenu" className="button navbar-burger">
-				            		<span></span> 
-				            		<span></span> 
-				            		<span></span>
-				            	</button>
-					        </div>
-					        <div id="navMenu" className="navbar-menu">
-					            <div className="navbar-end">
-					                <NavLink to="/" className="navbar-item router-link-exact-active router-link-active">
-						            	HOME
-						            </NavLink> 
-						            <NavLink to="/pricing" className="navbar-item">
-						            	PRICING
-						            </NavLink> 
-						            <NavLink to="/about-us" className="navbar-item">
-						            	ABOUT US
-						            </NavLink> 
-						            <NavLink to="/contact-us" className="navbar-item">
-						            	CONTACT US
-						            </NavLink>
-					                <div className="navbar-item">
-					                    <p className="control">
-					                        <Link to="/dashboard/workspaces" className="button is-warning">
-					                            <span>
-							                     	DASHBOARD
-							                     </span>
-					                        </Link>
-					                    </p>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
+					<nav className={ classNames({ 'navbar': true, 'is-fixed-top': this.props.hasNavbar, 'is-abs': !this.props.hasNavbar}) } role="navigation" aria-label="main navigation" id="main-navbar">
+						<div className="container">
+							<div className="navbar-brand">
+								<NavLink to="/" className="navbar-item _cursive-font">
+									Web
+									<span className="has-text-warning">
+										Forms
+									</span>
+								</NavLink>
+								<button type="button" className="button navbar-burger" data-target="navMenu" v-if="hasNavbar">
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+							<div className="navbar-menu" id="navMenu" v-if="hasNavbar">
+								<div className="navbar-end">
+									<NavLink to="/" className="navbar-item">
+										HOME
+									</NavLink>
+									<NavLink to="/pricing" className="navbar-item">
+										PRICING
+									</NavLink>
+									<NavLink to="/about-us" className="navbar-item">
+										ABOUT US
+									</NavLink>
+									<NavLink to="/contact-us" className="navbar-item">
+										CONTACT US
+									</NavLink>
+									<div className="navbar-item">
+										<p className="control">
+											<a className="button is-warning" href="/dashboard/workspaces">
+												{ this.__renderHeaderButton() }
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</nav>
 					<Switch>
 						<Route exact path="/" component={Home} />
@@ -134,3 +149,13 @@ export default class App extends React.Component {
 		)
 	}
 }
+
+function mapStateToProps(state){
+	return {
+		'hasNavbar': state.app.hasNavbar,
+		'hasFooter': state.app.hasFooter,
+		'contentLoading': state.app.contentLoading
+	}
+}
+
+export default connect(mapStateToProps)(App)
